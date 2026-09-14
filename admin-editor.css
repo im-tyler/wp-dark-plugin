@@ -122,6 +122,41 @@ body.wp-admin,
 	color: var( --wpdp-text );
 }
 
+body.wp-admin .block-editor-tabbed-sidebar {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .block-editor-tabbed-sidebar .components-search-control input,
+body.wp-admin .block-editor-inserter__search input {
+	background: var( --wpdp-input ) !important;
+	color: var( --wpdp-text ) !important;
+	border-color: var( --wpdp-border );
+}
+
+body.wp-admin .block-editor-tabbed-sidebar__close-button {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .block-editor-tabbed-sidebar .components-tabs__item {
+	color: var( --wpdp-text-muted );
+}
+
+body.wp-admin .block-editor-tabbed-sidebar .components-tabs__item.is-active {
+	color: var( --wpdp-text-strong );
+}
+
+body.wp-admin .block-editor-tabbed-sidebar .components-search-control {
+	background: var( --wpdp-input );
+	border-color: var( --wpdp-border );
+}
+
+body.wp-admin .block-editor-block-types-list__item,
+body.wp-admin .block-editor-block-types-list__item-title {
+	color: var( --wpdp-text );
+}
+
 .block-editor-block-card__title {
 	color: var( --wpdp-text );
 }

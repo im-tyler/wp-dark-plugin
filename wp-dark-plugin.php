@@ -169,8 +169,8 @@ function wpdp_admin_styles( $hook_suffix ) {
 	$colors = wpdp_colors();
 
 	if ( '1' === $colors['everywhere'] ) {
-		wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.2' );
-		wp_enqueue_style( 'wpdp-admin-global', plugin_dir_url( __FILE__ ) . 'admin-global.css', array( 'wpdp-editor-chrome' ), '1.4.2' );
+		wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), (string) filemtime( plugin_dir_path( __FILE__ ) . 'admin-editor.css' ) );
+		wp_enqueue_style( 'wpdp-admin-global', plugin_dir_url( __FILE__ ) . 'admin-global.css', array( 'wpdp-editor-chrome' ), (string) filemtime( plugin_dir_path( __FILE__ ) . 'admin-global.css' ) );
 		wp_add_inline_style( 'wpdp-admin-global', wpdp_vars_css( ':root' ) );
 		return;
 	}
@@ -185,7 +185,7 @@ function wpdp_admin_styles( $hook_suffix ) {
 		return;
 	}
 
-	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.2' );
+	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), (string) filemtime( plugin_dir_path( __FILE__ ) . 'admin-editor.css' ) );
 	wp_add_inline_style( 'wpdp-editor-chrome', wpdp_vars_css( ':root' ) );
 }
 add_action( 'admin_enqueue_scripts', 'wpdp_admin_styles' );
