@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Dark Plugin
  * Description: Always-dark post editor. Darkens the admin chrome and the writing canvas when editing blog posts (block editor only). Colours configurable under Settings.
- * Version: 1.4.1
+ * Version: 1.4.4
  * Requires at least: 6.3
  * Author: Tyler
  * License: MIT
@@ -162,15 +162,15 @@ function wpdp_canvas_css() {
 }
 CSS;
 
-	return wpdp_vars_css( ':root' ) . str_replace( '{scope}', wpdp_canvas_scope(), $css );
+	return wpdp_vars_css( ':root' ) . '@media (min-width: 500px) {' . str_replace( '{scope}', wpdp_canvas_scope(), $css ) . '}';
 }
 
 function wpdp_admin_styles( $hook_suffix ) {
 	$colors = wpdp_colors();
 
 	if ( '1' === $colors['everywhere'] ) {
-		wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.1' );
-		wp_enqueue_style( 'wpdp-admin-global', plugin_dir_url( __FILE__ ) . 'admin-global.css', array( 'wpdp-editor-chrome' ), '1.4.1' );
+		wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.2' );
+		wp_enqueue_style( 'wpdp-admin-global', plugin_dir_url( __FILE__ ) . 'admin-global.css', array( 'wpdp-editor-chrome' ), '1.4.2' );
 		wp_add_inline_style( 'wpdp-admin-global', wpdp_vars_css( ':root' ) );
 		return;
 	}
@@ -185,16 +185,18 @@ function wpdp_admin_styles( $hook_suffix ) {
 		return;
 	}
 
-	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.1' );
+	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.2' );
 	wp_add_inline_style( 'wpdp-editor-chrome', wpdp_vars_css( ':root' ) );
 }
 add_action( 'admin_enqueue_scripts', 'wpdp_admin_styles' );
 
-function wpdp_canvas_styles() {
-	add_theme_support( 'editor-styles' );
-	add_editor_style( plugins_url( 'canvas.php?ver=1.4.1-' . wpdp_settings_version(), __FILE__ ) );
+function wpdp_editor_settings( $settings ) {
+	if ( isset( $settings['__unstableResolvedAssets']['styles'] ) ) {
+		$settings['__unstableResolvedAssets']['styles'] .= '<style id="wpdp-canvas">' . wpdp_canvas_css() . '</style>';
+	}
+	return $settings;
 }
-add_action( 'after_setup_theme', 'wpdp_canvas_styles' );
+add_filter( 'block_editor_settings_all', 'wpdp_editor_settings' );
 
 function wpdp_register_settings() {
 	register_setting( 'wpdp_settings', 'wpdp_colors', array( 'sanitize_callback' => 'wpdp_sanitize' ) );
@@ -261,3 +263,43 @@ function wpdp_action_links( $links ) {
 	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'wpdp_action_links' );
+
+function wpdp_preview_fix() {
+	$screen = get_current_screen();
+	if ( ! $screen || 'post' !== $screen->base ) {
+		return;
+	}
+	?>
+	<script>
+	(function() {
+		function clean() {
+			var frames = document.querySelectorAll('.components-modal__frame iframe, [class*="editor-start-page"] iframe');
+			Array.prototype.forEach.call(frames, function(f) {
+				if (f.getBoundingClientRect().width > 700) return;
+				try {
+					var doc = f.contentDocument;
+					if (!doc) return;
+					var s = doc.getElementById('wpdp-canvas');
+					if (s && s.parentNode) s.parentNode.removeChild(s);
+				} catch (e) {}
+			});
+		}
+		var t = null;
+		var mo = new MutationObserver(function() {
+			if (t) clearTimeout(t);
+			t = setTimeout(clean, 120);
+		});
+		function start() {
+			clean();
+			mo.observe(document.body, { childList: true, subtree: true });
+		}
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', start);
+		} else {
+			start();
+		}
+	})();
+	</script>
+	<?php
+}
+add_action( 'admin_print_footer_scripts', 'wpdp_preview_fix' );

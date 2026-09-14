@@ -14,6 +14,15 @@ body.wp-admin #adminmenu .wp-submenu {
 	background: var( --wpdp-surface-2 ) !important;
 }
 
+body.wp-admin #wpadminbar .menupop .ab-sub-wrapper,
+body.wp-admin #wpadminbar .menupop ul.ab-submenu {
+	background: var( --wpdp-surface-2 ) !important;
+}
+
+body.wp-admin #wpadminbar .menupop .ab-sub-wrapper a {
+	color: var( --wpdp-text ) !important;
+}
+
 body.wp-admin .import-export-section,
 body.wp-admin .ovsb-css-mgmt__list {
 	background: var( --wpdp-surface );
