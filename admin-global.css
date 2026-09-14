@@ -1,0 +1,147 @@
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu {
+	background: var( --wpdp-surface );
+}
+
+#adminmenu a {
+	color: var( --wpdp-text-muted );
+}
+
+#adminmenu a:hover,
+#adminmenu a:focus {
+	color: var( --wpdp-text-strong );
+}
+
+#adminmenu .wp-submenu {
+	background: var( --wpdp-surface-2 );
+}
+
+#adminmenu .wp-submenu a {
+	color: var( --wpdp-text-muted );
+}
+
+#adminmenu .wp-submenu a:hover,
+#adminmenu .wp-submenu a:focus {
+	color: var( --wpdp-text-strong );
+}
+
+#wpfooter {
+	color: var( --wpdp-text-muted );
+}
+
+h1,
+h2,
+h3 {
+	color: var( --wpdp-text );
+}
+
+a {
+	color: var( --wpdp-accent );
+}
+
+.wp-core-ui .button,
+.wp-core-ui .button-secondary {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+.wp-core-ui .button:hover,
+.wp-core-ui .button-secondary:hover {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text-strong );
+	border-color: var( --wpdp-text-muted );
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+	background: var( --wpdp-input );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+.form-table th,
+.form-table td {
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+.description,
+.form-table .description {
+	color: var( --wpdp-text-muted );
+}
+
+.wp-list-table th,
+.wp-list-table td {
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+.wp-list-table.striped > tbody > :nth-child( odd ) {
+	background: var( --wpdp-surface );
+}
+
+.row-actions {
+	color: var( --wpdp-text-muted );
+}
+
+.card {
+	background: var( --wpdp-surface );
+	border-color: var( --wpdp-border );
+	color: var( --wpdp-text );
+}
+
+.nav-tab-wrapper .nav-tab {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+.nav-tab-wrapper .nav-tab-active {
+	background: var( --wpdp-bg );
+	color: var( --wpdp-text-strong );
+}
+
+.subsubsub {
+	color: var( --wpdp-text-muted );
+}
+
+.notice,
+.notice-success,
+.notice-warning,
+.notice-error,
+.notice-info,
+.updated,
+.error,
+.update-nag {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+}
+
+.plugin-card {
+	background: var( --wpdp-surface );
+	border-color: var( --wpdp-border );
+}
+
+.plugin-card .desc,
+.plugin-card .author {
+	color: var( --wpdp-text-muted );
+}
+
+.widget {
+	background: var( --wpdp-surface );
+	border-color: var( --wpdp-border );
+}
+
+.widget .widget-top {
+	background: var( --wpdp-surface-2 );
+}

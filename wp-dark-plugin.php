@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Dark Plugin
  * Description: Always-dark post editor. Darkens the admin chrome and the writing canvas when editing blog posts (block editor only). Colours configurable under Settings.
- * Version: 1.3.0
+ * Version: 1.4.0
  * Requires at least: 6.3
  * Author: Tyler
  * License: MIT
@@ -14,6 +14,7 @@ function wpdp_defaults() {
 	return array(
 		'background' => '#1d1d1f',
 		'accent'     => '#8ab4f8',
+		'everywhere' => '0',
 	);
 }
 
@@ -91,7 +92,89 @@ function wpdp_settings_version() {
 	return substr( md5( wp_json_encode( wpdp_colors() ) ), 0, 8 );
 }
 
+function wpdp_canvas_scope() {
+	$colors = wpdp_colors();
+	return '1' === $colors['everywhere'] ? 'body.editor-styles-wrapper' : 'body.post-type-post';
+}
+
+function wpdp_canvas_css() {
+	$css = <<<'CSS'
+{scope} {
+	background: var( --wpdp-bg );
+	color: var( --wpdp-text );
+}
+
+{scope} .editor-post-title__input {
+	color: var( --wpdp-text-strong );
+}
+
+{scope} .editor-post-title__input::placeholder {
+	color: var( --wpdp-text-muted );
+}
+
+{scope} a {
+	color: var( --wpdp-accent );
+}
+
+{scope} h1,
+{scope} h2,
+{scope} h3,
+{scope} h4,
+{scope} h5,
+{scope} h6 {
+	color: var( --wpdp-text-strong );
+}
+
+{scope} blockquote {
+	border-color: var( --wpdp-border );
+}
+
+{scope} blockquote cite,
+{scope} .wp-block-quote__citation {
+	color: var( --wpdp-text-muted );
+}
+
+{scope} pre,
+{scope} .wp-block-code code {
+	background: var( --wpdp-code );
+	color: var( --wpdp-text );
+}
+
+{scope} table,
+{scope} .wp-block-table th,
+{scope} .wp-block-table td {
+	border-color: var( --wpdp-border );
+}
+
+{scope} hr,
+{scope} .wp-block-separator {
+	border-color: var( --wpdp-border );
+	background-color: var( --wpdp-border );
+}
+
+{scope} figcaption {
+	color: var( --wpdp-text-muted );
+}
+
+{scope} ::selection {
+	background: var( --wpdp-accent );
+	color: #ffffff;
+}
+CSS;
+
+	return wpdp_vars_css( ':root' ) . str_replace( '{scope}', wpdp_canvas_scope(), $css );
+}
+
 function wpdp_admin_styles( $hook_suffix ) {
+	$colors = wpdp_colors();
+
+	if ( '1' === $colors['everywhere'] ) {
+		wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.0' );
+		wp_enqueue_style( 'wpdp-admin-global', plugin_dir_url( __FILE__ ) . 'admin-global.css', array( 'wpdp-editor-chrome' ), '1.4.0' );
+		wp_add_inline_style( 'wpdp-admin-global', wpdp_vars_css( ':root' ) );
+		return;
+	}
+
 	$screen = get_current_screen();
 
 	if ( ! $screen || 'post' !== $screen->post_type ) {
@@ -102,15 +185,14 @@ function wpdp_admin_styles( $hook_suffix ) {
 		return;
 	}
 
-	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.3.0' );
+	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.0' );
 	wp_add_inline_style( 'wpdp-editor-chrome', wpdp_vars_css( ':root' ) );
 }
 add_action( 'admin_enqueue_scripts', 'wpdp_admin_styles' );
 
 function wpdp_canvas_styles() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style( plugins_url( 'canvas.css?ver=1.3.0', __FILE__ ) );
-	add_editor_style( plugins_url( 'canvas-vars.php?ver=' . wpdp_settings_version(), __FILE__ ) );
+	add_editor_style( plugins_url( 'canvas.php?ver=1.4.0-' . wpdp_settings_version(), __FILE__ ) );
 }
 add_action( 'after_setup_theme', 'wpdp_canvas_styles' );
 
@@ -129,6 +211,7 @@ function wpdp_sanitize( $input ) {
 	return array(
 		'background' => $background ? $background : $defaults['background'],
 		'accent'     => $accent ? $accent : $defaults['accent'],
+		'everywhere' => empty( $input['everywhere'] ) ? '0' : '1',
 	);
 }
 
@@ -154,6 +237,15 @@ function wpdp_settings_page() {
 					<td>
 						<input type="color" id="wpdp-accent" name="wpdp_colors[accent]" value="<?php echo esc_attr( $colors['accent'] ); ?>">
 						<p class="description">Accent is used for links and text selection in the editor canvas. Text colour is chosen automatically based on the background.</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">Everywhere</th>
+					<td>
+						<label for="wpdp-everywhere">
+							<input type="checkbox" id="wpdp-everywhere" name="wpdp_colors[everywhere]" value="1" <?php checked( $colors['everywhere'], '1' ); ?>>
+							Apply the dark theme to the entire WordPress admin
+						</label>
 					</td>
 				</tr>
 			</table>

@@ -4,7 +4,7 @@ WordPress plugin: always-dark post editor. Darkens the admin chrome and the bloc
 
 ## Settings
 
-Settings link appears next to Activate/Deactivate on the Plugins page (also under Settings → Dark Editor). Pick a background and accent colour; surfaces, borders, and code shades are derived automatically, and text colour flips light/dark based on background luminance.
+Settings link appears next to Activate/Deactivate on the Plugins page (also under Settings → Dark Editor). Pick a background and accent colour; surfaces, borders, and code shades are derived automatically, and text colour flips light/dark based on background luminance. The Everywhere toggle applies the dark theme to the entire WordPress admin (all screens, all post types) instead of just the post editor.
 
 ## Install
 
@@ -12,7 +12,7 @@ Copy the folder to `wp-content/plugins/` and activate in the WP admin.
 
 ## Files
 
-- `wp-dark-plugin.php` — loader, settings page, palette derivation
-- `admin-editor.css` — admin chrome, CSS-variable driven (post editor screens only)
-- `canvas.css` — writing canvas, injected into the editor iframe, scoped to `body.post-type-post`
-- `canvas-vars.php` — dynamic endpoint serving the palette vars into the editor iframe
+- `wp-dark-plugin.php` — loader, settings page, palette derivation, canvas stylesheet generation
+- `admin-editor.css` — editor chrome, CSS-variable driven (post editor screens, or everywhere when toggled)
+- `admin-global.css` — whole-admin dark styles, loaded only when Everywhere is on
+- `canvas.php` — dynamic stylesheet injected into the editor iframe; scope depends on the Everywhere toggle
