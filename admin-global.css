@@ -218,6 +218,76 @@ body.wp-admin .postbox .inside .description {
 	color: var( --wpdp-text-muted ) !important;
 }
 
+body.wp-admin .wp-list-table th,
+body.wp-admin .wp-list-table td {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin #wpbody-content td {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .subsubsub a.current {
+	color: var( --wpdp-text ) !important;
+}
+
+body.wp-admin .page-title-action {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+body.wp-admin button.button-link {
+	color: var( --wpdp-accent );
+}
+
+body.wp-admin .theme-wrap {
+	background: var( --wpdp-bg );
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .theme-actions {
+	background: var( --wpdp-surface );
+}
+
+body.wp-admin .theme-wrap a:not(.button):not(.button-primary) {
+	color: var( --wpdp-accent );
+}
+
+body.wp-admin .wp-core-ui .button:not(.button-primary),
+body.wp-admin .wp-core-ui .button-secondary {
+	background: var( --wpdp-surface-2 ) !important;
+	color: var( --wpdp-text ) !important;
+	border-color: var( --wpdp-border );
+}
+
+body.wp-core-ui .button-primary {
+	background: var( --wpdp-accent );
+	border-color: transparent;
+	color: #ffffff;
+}
+
+body.wp-admin a.button {
+	background: var( --wpdp-surface-2 ) !important;
+	color: var( --wpdp-text ) !important;
+	border-color: var( --wpdp-border ) !important;
+}
+
+body.wp-admin .theme-name {
+	color: var( --wpdp-text ) !important;
+}
+
+body.wp-admin .theme-name a,
+body.wp-admin .theme-browser .theme a {
+	color: var( --wpdp-accent );
+}
+
+body.wp-admin .notice a,
+body.wp-admin .updated a,
+body.wp-admin .error a {
+	color: var( --wpdp-accent );
+}
+
 body.wp-admin select,
 body.wp-admin textarea,
 body.wp-admin input[type="text"],
