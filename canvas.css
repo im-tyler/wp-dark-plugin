@@ -1,19 +1,30 @@
 body.post-type-post {
-	background: #1d1d1f;
-	color: #e8e8e8;
-	color-scheme: dark;
+	--wpdp-bg: #1d1d1f;
+	--wpdp-surface: #232326;
+	--wpdp-surface-2: #2a2a2e;
+	--wpdp-border: #3a3a3f;
+	--wpdp-input: #1a1a1c;
+	--wpdp-code: #171719;
+	--wpdp-text: #e8e8e8;
+	--wpdp-text-strong: #f2f2f2;
+	--wpdp-text-muted: #a8a8a8;
+	--wpdp-accent: #8ab4f8;
+	--wpdp-scheme: dark;
+	background: var( --wpdp-bg );
+	color: var( --wpdp-text );
+	color-scheme: var( --wpdp-scheme );
 }
 
 body.post-type-post .editor-post-title__input {
-	color: #f2f2f2;
+	color: var( --wpdp-text-strong );
 }
 
 body.post-type-post .editor-post-title__input::placeholder {
-	color: #7a7a7a;
+	color: var( --wpdp-text-muted );
 }
 
 body.post-type-post a {
-	color: #8ab4f8;
+	color: var( --wpdp-accent );
 }
 
 body.post-type-post h1,
@@ -22,41 +33,41 @@ body.post-type-post h3,
 body.post-type-post h4,
 body.post-type-post h5,
 body.post-type-post h6 {
-	color: #f2f2f2;
+	color: var( --wpdp-text-strong );
 }
 
 body.post-type-post blockquote {
-	border-color: #4a4a50;
+	border-color: var( --wpdp-border );
 }
 
 body.post-type-post blockquote cite,
 body.post-type-post .wp-block-quote__citation {
-	color: #a8a8a8;
+	color: var( --wpdp-text-muted );
 }
 
 body.post-type-post pre,
 body.post-type-post .wp-block-code code {
-	background: #141416;
-	color: #e8e8e8;
+	background: var( --wpdp-code );
+	color: var( --wpdp-text );
 }
 
 body.post-type-post table,
 body.post-type-post .wp-block-table th,
 body.post-type-post .wp-block-table td {
-	border-color: #3a3a3f;
+	border-color: var( --wpdp-border );
 }
 
 body.post-type-post hr,
 body.post-type-post .wp-block-separator {
-	border-color: #3a3a3f;
-	background-color: #3a3a3f;
+	border-color: var( --wpdp-border );
+	background-color: var( --wpdp-border );
 }
 
 body.post-type-post figcaption {
-	color: #a8a8a8;
+	color: var( --wpdp-text-muted );
 }
 
 body.post-type-post ::selection {
-	background: #3b5bdb;
+	background: var( --wpdp-accent );
 	color: #ffffff;
 }

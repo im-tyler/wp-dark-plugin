@@ -1,54 +1,66 @@
 body.wp-admin {
-	background: #1d1d1f;
-	color-scheme: dark;
+	--wpdp-bg: #1d1d1f;
+	--wpdp-surface: #232326;
+	--wpdp-surface-2: #2a2a2e;
+	--wpdp-border: #3a3a3f;
+	--wpdp-input: #1a1a1c;
+	--wpdp-code: #171719;
+	--wpdp-text: #e8e8e8;
+	--wpdp-text-strong: #f2f2f2;
+	--wpdp-text-muted: #a8a8a8;
+	--wpdp-accent: #8ab4f8;
+	--wpdp-scheme: dark;
+	background: var( --wpdp-bg );
+	color-scheme: var( --wpdp-scheme );
 }
 
+body.wp-admin,
 .edit-post-layout {
-	color: #e6e6e6;
+	color: var( --wpdp-text );
 }
 
 .edit-post-header {
-	background: #232326;
-	color: #e6e6e6;
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
 }
 
 .edit-post-header .components-button {
-	color: #d6d6d6;
+	color: var( --wpdp-text );
 }
 
 .edit-post-header .components-button:hover {
-	color: #ffffff;
+	color: var( --wpdp-text-strong );
 }
 
 .interface-interface-skeleton__content {
-	background: #1d1d1f;
+	background: var( --wpdp-bg );
 }
 
 .interface-interface-skeleton__sidebar,
 .interface-interface-skeleton__secondary-sidebar {
-	background: #232326;
+	background: var( --wpdp-surface );
 }
 
 .edit-post-sidebar .components-panel {
-	background: #232326;
-	color: #e6e6e6;
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
 }
 
 .components-panel__header {
-	background: #2a2a2e;
-	color: #e6e6e6;
-	border-bottom-color: #3a3a3f;
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	border-bottom-color: var( --wpdp-border );
 }
 
 .components-panel__row {
-	color: #d6d6d6;
+	color: var( --wpdp-text );
 }
 
 .components-panel .components-base-control__label,
 .components-panel .components-input-control__label,
 .components-panel .components-toggle-control__label,
 .components-panel .components-checkbox-control__label {
-	color: #c9c9c9;
+	color: var( --wpdp-text-muted );
 }
 
 .components-text-control__input,
@@ -57,44 +69,23 @@ body.wp-admin {
 .components-select-control__input,
 .block-editor-url-input__input,
 .components-popover input[type="text"] {
-	background: #1a1a1c !important;
-	color: #e8e8e8 !important;
-	border-color: #3a3a3f;
-	color-scheme: dark;
-}
-
-.metabox-holder .postbox {
-	background: #232326;
-	border-color: #3a3a3f;
-	color: #d6d6d6;
-}
-
-.postbox-header {
-	background: #2a2a2e;
-	border-bottom-color: #3a3a3f;
-}
-
-.postbox-header .hndle,
-.postbox .postbox-header h2,
-.postbox label {
-	color: #d6d6d6;
-}
-
-.postbox .inside {
-	color: #c9c9c9;
+	background: var( --wpdp-input ) !important;
+	color: var( --wpdp-text ) !important;
+	border-color: var( --wpdp-border );
+	color-scheme: var( --wpdp-scheme );
 }
 
 .edit-post-header .components-button:not(.is-primary),
 .edit-post-sidebar .components-button:not(.is-primary),
 .block-editor-block-toolbar .components-button,
 .components-popover .components-button {
-	color: #d6d6d6;
+	color: var( --wpdp-text );
 }
 
 .block-editor-block-contextual-toolbar,
 .block-editor-block-toolbar {
-	background: #2a2a2e;
-	border-color: #3a3a3f;
+	background: var( --wpdp-surface-2 );
+	border-color: var( --wpdp-border );
 }
 
 .components-popover .components-popover__content,
@@ -102,35 +93,56 @@ body.wp-admin {
 .components-dropdown-menu__popover,
 .components-modal__frame,
 .editor-post-publish-panel {
-	background: #26262a;
-	color: #e6e6e6;
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
 }
 
 .components-modal__header {
-	background: #2a2a2e;
-	color: #e6e6e6;
-	border-bottom-color: #3a3a3f;
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	border-bottom-color: var( --wpdp-border );
 }
 
 .components-menu-group__label {
-	color: #9a9a9a;
+	color: var( --wpdp-text-muted );
 }
 
 .components-notice {
-	background: #2a2a2e;
-	color: #d6d6d6;
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
 }
 
 .block-editor-inserter__menu,
 .block-editor-inserter__main-area {
-	background: #232326;
-	color: #e6e6e6;
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
 }
 
 .block-editor-block-card__title {
-	color: #e6e6e6;
+	color: var( --wpdp-text );
 }
 
 .block-editor-block-card__description {
-	color: #9a9a9a;
+	color: var( --wpdp-text-muted );
+}
+
+.metabox-holder .postbox {
+	background: var( --wpdp-surface );
+	border-color: var( --wpdp-border );
+	color: var( --wpdp-text );
+}
+
+.postbox-header {
+	background: var( --wpdp-surface-2 );
+	border-bottom-color: var( --wpdp-border );
+}
+
+.postbox-header .hndle,
+.postbox .postbox-header h2,
+.postbox label {
+	color: var( --wpdp-text );
+}
+
+.postbox .inside {
+	color: var( --wpdp-text-muted );
 }
