@@ -21,6 +21,17 @@ body.wp-admin .ovsb-css-mgmt__list {
 	border-color: var( --wpdp-border );
 }
 
+body.wp-admin .oxygen-admin-screen-home-link {
+	background: var( --wpdp-surface-2 ) !important;
+	border: 1px solid var( --wpdp-border ) !important;
+	color: var( --wpdp-text ) !important;
+}
+
+body.wp-admin .oxygen-admin-screen-home-link:hover {
+	background: var( --wpdp-border ) !important;
+	color: var( --wpdp-text-strong ) !important;
+}
+
 #adminmenu a {
 	color: var( --wpdp-text-muted );
 }
