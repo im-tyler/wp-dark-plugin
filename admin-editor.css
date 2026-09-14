@@ -327,6 +327,10 @@ body.wp-admin .block-editor-block-breadcrumb button {
 	background: none !important;
 }
 
+body.wp-admin .block-editor-block-breadcrumb .block-editor-block-breadcrumb__button {
+	color: var( --wpdp-text-muted ) !important;
+}
+
 .media-toolbar.wp-filter {
 	background: var( --wpdp-surface );
 	color: var( --wpdp-text );

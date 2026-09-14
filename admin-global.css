@@ -182,6 +182,42 @@ body.wp-admin .attachment-preview {
 	background: var( --wpdp-surface ) !important;
 }
 
+body.wp-admin #wpbody-content {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin #wpbody-content p,
+body.wp-admin #wpbody-content li,
+body.wp-admin #wpbody-content div,
+body.wp-admin #wpbody-content span {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin #wpbody-content time,
+body.wp-admin #wpbody-content small {
+	color: var( --wpdp-text-muted );
+}
+
+body.wp-admin .postbox .inside h2,
+body.wp-admin .postbox .inside h3,
+body.wp-admin .postbox .inside h4 {
+	color: var( --wpdp-text ) !important;
+}
+
+body.wp-admin .postbox .inside li,
+body.wp-admin .postbox .inside span,
+body.wp-admin .postbox .inside time,
+body.wp-admin .postbox .inside p,
+body.wp-admin .postbox .inside div {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .postbox .inside time,
+body.wp-admin .postbox .inside small,
+body.wp-admin .postbox .inside .description {
+	color: var( --wpdp-text-muted ) !important;
+}
+
 body.wp-admin select,
 body.wp-admin textarea,
 body.wp-admin input[type="text"],
