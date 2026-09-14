@@ -1,0 +1,62 @@
+body.post-type-post {
+	background: #1d1d1f;
+	color: #e8e8e8;
+	color-scheme: dark;
+}
+
+body.post-type-post .editor-post-title__input {
+	color: #f2f2f2;
+}
+
+body.post-type-post .editor-post-title__input::placeholder {
+	color: #7a7a7a;
+}
+
+body.post-type-post a {
+	color: #8ab4f8;
+}
+
+body.post-type-post h1,
+body.post-type-post h2,
+body.post-type-post h3,
+body.post-type-post h4,
+body.post-type-post h5,
+body.post-type-post h6 {
+	color: #f2f2f2;
+}
+
+body.post-type-post blockquote {
+	border-color: #4a4a50;
+}
+
+body.post-type-post blockquote cite,
+body.post-type-post .wp-block-quote__citation {
+	color: #a8a8a8;
+}
+
+body.post-type-post pre,
+body.post-type-post .wp-block-code code {
+	background: #141416;
+	color: #e8e8e8;
+}
+
+body.post-type-post table,
+body.post-type-post .wp-block-table th,
+body.post-type-post .wp-block-table td {
+	border-color: #3a3a3f;
+}
+
+body.post-type-post hr,
+body.post-type-post .wp-block-separator {
+	border-color: #3a3a3f;
+	background-color: #3a3a3f;
+}
+
+body.post-type-post figcaption {
+	color: #a8a8a8;
+}
+
+body.post-type-post ::selection {
+	background: #3b5bdb;
+	color: #ffffff;
+}
