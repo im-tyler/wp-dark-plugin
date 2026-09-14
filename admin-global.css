@@ -4,6 +4,16 @@
 	background: var( --wpdp-surface );
 }
 
+body.wp-admin #adminmenuback,
+body.wp-admin #adminmenuwrap,
+body.wp-admin #adminmenu {
+	background: var( --wpdp-surface ) !important;
+}
+
+body.wp-admin #adminmenu .wp-submenu {
+	background: var( --wpdp-surface-2 ) !important;
+}
+
 #adminmenu a {
 	color: var( --wpdp-text-muted );
 }
