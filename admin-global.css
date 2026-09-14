@@ -145,3 +145,99 @@ textarea {
 .widget .widget-top {
 	background: var( --wpdp-surface-2 );
 }
+
+#dashboard_activity .inside ul li,
+#dashboard_recent_drafts .inside ul li {
+	background: transparent;
+}
+
+#dashboard_activity .inside ul li:hover,
+#dashboard_recent_drafts .inside ul li:hover {
+	background: var( --wpdp-surface-2 );
+}
+
+.wp-list-table {
+	background: var( --wpdp-bg );
+}
+
+.wp-list-table thead th,
+.wp-list-table tfoot th {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+}
+
+.wp-list-table.plugins tr.active {
+	background: var( --wpdp-surface );
+}
+
+body.wp-admin .wp-list-table {
+	background: var( --wpdp-bg ) !important;
+}
+
+body.wp-admin .wp-list-table tr {
+	background: transparent;
+}
+
+body.wp-admin .attachment-preview {
+	background: var( --wpdp-surface ) !important;
+}
+
+body.wp-admin select,
+body.wp-admin textarea,
+body.wp-admin input[type="text"],
+body.wp-admin input[type="search"],
+body.wp-admin input[type="email"],
+body.wp-admin input[type="url"],
+body.wp-admin input[type="password"],
+body.wp-admin input[type="number"],
+body.wp-admin input[type="tel"],
+body.wp-admin input[type="date"] {
+	background: var( --wpdp-input );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+#screen-meta-links .show-settings {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+	box-shadow: none;
+}
+
+.media-toolbar.wp-filter {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+.media-frame-content,
+.media-frame-toolbar {
+	background: var( --wpdp-bg );
+}
+
+.media-sidebar {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+}
+
+.attachment-preview {
+	background: var( --wpdp-surface );
+}
+
+.media-modal-close {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+}
+
+.media-menu {
+	background: var( --wpdp-surface );
+}
+
+.media-menu a {
+	color: var( --wpdp-text-muted );
+}
+
+.media-menu .active,
+.media-menu a:hover {
+	color: var( --wpdp-text );
+}

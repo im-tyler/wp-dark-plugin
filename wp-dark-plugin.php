@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Dark Plugin
  * Description: Always-dark post editor. Darkens the admin chrome and the writing canvas when editing blog posts (block editor only). Colours configurable under Settings.
- * Version: 1.4.0
+ * Version: 1.4.1
  * Requires at least: 6.3
  * Author: Tyler
  * License: MIT
@@ -169,8 +169,8 @@ function wpdp_admin_styles( $hook_suffix ) {
 	$colors = wpdp_colors();
 
 	if ( '1' === $colors['everywhere'] ) {
-		wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.0' );
-		wp_enqueue_style( 'wpdp-admin-global', plugin_dir_url( __FILE__ ) . 'admin-global.css', array( 'wpdp-editor-chrome' ), '1.4.0' );
+		wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.1' );
+		wp_enqueue_style( 'wpdp-admin-global', plugin_dir_url( __FILE__ ) . 'admin-global.css', array( 'wpdp-editor-chrome' ), '1.4.1' );
 		wp_add_inline_style( 'wpdp-admin-global', wpdp_vars_css( ':root' ) );
 		return;
 	}
@@ -185,14 +185,14 @@ function wpdp_admin_styles( $hook_suffix ) {
 		return;
 	}
 
-	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.0' );
+	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.4.1' );
 	wp_add_inline_style( 'wpdp-editor-chrome', wpdp_vars_css( ':root' ) );
 }
 add_action( 'admin_enqueue_scripts', 'wpdp_admin_styles' );
 
 function wpdp_canvas_styles() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style( plugins_url( 'canvas.php?ver=1.4.0-' . wpdp_settings_version(), __FILE__ ) );
+	add_editor_style( plugins_url( 'canvas.php?ver=1.4.1-' . wpdp_settings_version(), __FILE__ ) );
 }
 add_action( 'after_setup_theme', 'wpdp_canvas_styles' );
 

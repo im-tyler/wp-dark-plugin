@@ -266,3 +266,111 @@ body.wp-admin [data-wpds-root-provider] {
 	color: var( --wpdp-text );
 	box-shadow: inset 0 0 0 1px var( --wpdp-border );
 }
+
+body.wp-admin.wp-core-ui {
+	background: var( --wpdp-bg ) !important;
+}
+
+.editor-visual-editor,
+.edit-post-visual-editor {
+	background: var( --wpdp-bg );
+}
+
+.edit-post-meta-boxes-main {
+	background: var( --wpdp-bg );
+	color: var( --wpdp-text );
+}
+
+.edit-post-meta-boxes-main button {
+	color: var( --wpdp-text-muted );
+}
+
+.editor-layout__toggle-publish-panel {
+	background: var( --wpdp-bg );
+}
+
+body.wp-admin .components-button.is-secondary {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	box-shadow: inset 0 0 0 1px var( --wpdp-border );
+}
+
+body.wp-admin .components-button.is-secondary:hover:not(:disabled) {
+	color: var( --wpdp-text-strong );
+	box-shadow: inset 0 0 0 1px var( --wpdp-text-muted );
+}
+
+.editor-document-bar {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+}
+
+.editor-document-bar .components-button {
+	color: var( --wpdp-text );
+}
+
+.block-editor-block-breadcrumb {
+	background: transparent;
+	color: var( --wpdp-text-muted );
+}
+
+.block-editor-block-breadcrumb button {
+	background: none;
+	color: var( --wpdp-text-muted );
+}
+
+body.wp-admin .block-editor-block-breadcrumb {
+	background: transparent !important;
+}
+
+body.wp-admin .block-editor-block-breadcrumb button {
+	background: none !important;
+}
+
+.media-toolbar.wp-filter {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+.media-frame-content,
+.media-frame-toolbar {
+	background: var( --wpdp-bg );
+}
+
+.media-sidebar {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+}
+
+.attachment-preview {
+	background: var( --wpdp-surface );
+}
+
+body.wp-admin .attachment-preview {
+	background: var( --wpdp-surface ) !important;
+}
+
+.media-modal-close {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+}
+
+.media-menu {
+	background: var( --wpdp-surface );
+}
+
+.media-menu a {
+	color: var( --wpdp-text-muted );
+}
+
+.media-menu .active,
+.media-menu a:hover {
+	color: var( --wpdp-text );
+}
+
+.media-frame .button {
+	background: var( --wpdp-surface-2 );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
