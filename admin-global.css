@@ -50,6 +50,12 @@ a {
 	color: var( --wpdp-accent );
 }
 
+body.wp-admin a:hover,
+body.wp-admin a:focus,
+body.wp-admin a:active {
+	color: var( --wpdp-text-strong );
+}
+
 .wp-core-ui .button,
 .wp-core-ui .button-secondary {
 	background: var( --wpdp-surface-2 );
