@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Dark Plugin
  * Description: Always-dark post editor. Darkens the admin chrome and the writing canvas when editing blog posts (block editor only). Colours configurable under Settings.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Requires at least: 6.3
  * Author: Tyler
  * License: MIT
@@ -102,14 +102,14 @@ function wpdp_admin_styles( $hook_suffix ) {
 		return;
 	}
 
-	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.1.0' );
-	wp_add_inline_style( 'wpdp-editor-chrome', wpdp_vars_css( 'body.wp-admin' ) );
+	wp_enqueue_style( 'wpdp-editor-chrome', plugin_dir_url( __FILE__ ) . 'admin-editor.css', array(), '1.2.0' );
+	wp_add_inline_style( 'wpdp-editor-chrome', wpdp_vars_css( ':root' ) );
 }
 add_action( 'admin_enqueue_scripts', 'wpdp_admin_styles' );
 
 function wpdp_canvas_styles() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style( plugins_url( 'canvas.css?ver=1.1.0', __FILE__ ) );
+	add_editor_style( plugins_url( 'canvas.css?ver=1.2.0', __FILE__ ) );
 	add_editor_style( plugins_url( 'canvas-vars.php?ver=' . wpdp_settings_version(), __FILE__ ) );
 }
 add_action( 'after_setup_theme', 'wpdp_canvas_styles' );

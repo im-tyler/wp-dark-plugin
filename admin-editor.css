@@ -1,4 +1,4 @@
-body.wp-admin {
+:root {
 	--wpdp-bg: #1d1d1f;
 	--wpdp-surface: #232326;
 	--wpdp-surface-2: #2a2a2e;
@@ -10,6 +10,10 @@ body.wp-admin {
 	--wpdp-text-muted: #a8a8a8;
 	--wpdp-accent: #8ab4f8;
 	--wpdp-scheme: dark;
+	color-scheme: var( --wpdp-scheme );
+}
+
+body.wp-admin {
 	background: var( --wpdp-bg );
 	color-scheme: var( --wpdp-scheme );
 }
@@ -145,4 +149,44 @@ body.wp-admin,
 
 .postbox .inside {
 	color: var( --wpdp-text-muted );
+}
+
+.editor-footer,
+.edit-post-footer,
+.edit-post-layout__footer,
+.interface-interface-skeleton__footer {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+	border-top-color: var( --wpdp-border );
+}
+
+.editor-footer .components-button,
+.edit-post-footer .components-button,
+.editor-footer .editor-post-stat__value,
+.edit-post-footer .editor-post-stat__value {
+	color: var( --wpdp-text-muted );
+}
+
+.edit-post-layout__metaboxes {
+	background: var( --wpdp-bg );
+}
+
+body.wp-admin [class*="oxygen"],
+body.wp-admin [id*="oxygen"] {
+	background: var( --wpdp-surface ) !important;
+	color: var( --wpdp-text ) !important;
+	border-color: var( --wpdp-border ) !important;
+}
+
+body.wp-admin [class*="oxygen"] a,
+body.wp-admin [class*="oxygen"] button,
+body.wp-admin [id*="oxygen"] a,
+body.wp-admin [id*="oxygen"] button {
+	color: var( --wpdp-text ) !important;
+}
+
+body.wp-admin [class*="oxygen"] input,
+body.wp-admin [id*="oxygen"] input {
+	background: var( --wpdp-input ) !important;
+	color: var( --wpdp-text ) !important;
 }

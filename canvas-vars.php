@@ -8,4 +8,4 @@ if ( ! function_exists( 'wpdp_vars_css' ) ) {
 	exit;
 }
 
-echo wpdp_vars_css( 'body.post-type-post' );
+echo wpdp_vars_css( ':root' );

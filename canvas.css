@@ -1,4 +1,4 @@
-body.post-type-post {
+:root {
 	--wpdp-bg: #1d1d1f;
 	--wpdp-surface: #232326;
 	--wpdp-surface-2: #2a2a2e;
@@ -10,9 +10,12 @@ body.post-type-post {
 	--wpdp-text-muted: #a8a8a8;
 	--wpdp-accent: #8ab4f8;
 	--wpdp-scheme: dark;
+	color-scheme: var( --wpdp-scheme );
+}
+
+body.post-type-post {
 	background: var( --wpdp-bg );
 	color: var( --wpdp-text );
-	color-scheme: var( --wpdp-scheme );
 }
 
 body.post-type-post .editor-post-title__input {
