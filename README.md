@@ -6,6 +6,10 @@ WordPress plugin: always-dark post editor. Darkens the admin chrome and the bloc
 
 Settings link appears next to Activate/Deactivate on the Plugins page (also under Settings → Dark Editor). Pick a background and accent colour; surfaces, borders, and code shades are derived automatically, and text colour flips light/dark based on background luminance. The Everywhere toggle applies the dark theme to the entire WordPress admin (all screens, all post types) instead of just the post editor.
 
+## Oxygen Builder
+
+With Everywhere on, Oxygen Builder admin screens (home, import/export, stylesheet list, tooltips) are darkened too, using the same derived palette. Oxygen template previews intentionally keep the public (light) look.
+
 ## Install
 
 Copy the folder to `wp-content/plugins/` and activate in the WP admin.
