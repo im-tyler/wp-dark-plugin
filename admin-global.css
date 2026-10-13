@@ -538,3 +538,48 @@ body.wp-admin .wp-editor-container {
 body.wp-admin .health-check-offscreen-nav .health-check-tab {
 	background: var( --wpdp-surface-2 ) !important;
 }
+
+/* WP 7.0 app screens: Font Library and Settings > Connectors */
+
+body.wp-admin.font-library-php #wpbody-content,
+body.wp-admin.options-connectors-php #wpbody-content {
+	background: var( --wpdp-bg ) !important;
+}
+
+body.wp-admin.options-connectors-php #wpwrap {
+	background: var( --wpdp-bg ) !important;
+}
+
+body.wp-admin.font-library-php ul#adminmenu a.wp-has-current-submenu::after,
+body.wp-admin.font-library-php ul#adminmenu > li.current > a.current::after {
+	border-inline-end-color: var( --wpdp-bg );
+}
+
+body.wp-admin .components-card {
+	background: var( --wpdp-surface );
+	border-color: var( --wpdp-border );
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .components-card__header {
+	background: var( --wpdp-surface-2 );
+	border-bottom-color: var( --wpdp-border );
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .components-card__body,
+body.wp-admin .components-card__footer {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .components-tab-panel__tabs-item {
+	color: var( --wpdp-text-muted );
+}
+
+body.wp-admin .components-tab-panel__tabs-item.is-active {
+	color: var( --wpdp-text-strong );
+}
+
+body.wp-admin .components-card__divider {
+	border-color: var( --wpdp-border );
+}
