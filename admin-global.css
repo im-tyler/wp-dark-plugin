@@ -492,3 +492,49 @@ body.wp-admin.nav-menus-php #side-sortables .add-menu-item-tabs .tabs a,
 body.wp-admin.nav-menus-php .wp-tab-bar .wp-tab-active a {
 	color: var( --wpdp-text-strong );
 }
+
+/* Tools & Settings screens: widefat tables, stuffboxes, shared panels */
+
+body.wp-admin table.widefat {
+	background: var( --wpdp-bg ) !important;
+	border-color: var( --wpdp-border );
+	box-shadow: none;
+}
+
+body.wp-admin table.widefat thead th,
+body.wp-admin table.widefat thead td,
+body.wp-admin table.widefat tfoot th,
+body.wp-admin table.widefat tfoot td {
+	background: var( --wpdp-surface );
+	color: var( --wpdp-text );
+	border-color: var( --wpdp-border );
+}
+
+body.wp-admin table.widefat th,
+body.wp-admin table.widefat td {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin table.widefat.striped > tbody > :nth-child( odd ),
+body.wp-admin table.striped > tbody > :nth-child( odd ) {
+	background: var( --wpdp-surface );
+}
+
+body.wp-admin .stuffbox,
+body.wp-admin .widgets-holder-wrap,
+body.wp-admin .feature-filter,
+body.wp-admin p.popular-tags {
+	background: var( --wpdp-surface );
+	border-color: var( --wpdp-border );
+	box-shadow: none;
+	color: var( --wpdp-text );
+}
+
+body.wp-admin .wp-editor-container {
+	border-color: var( --wpdp-border );
+	box-shadow: none;
+}
+
+body.wp-admin .health-check-offscreen-nav .health-check-tab {
+	background: var( --wpdp-surface-2 ) !important;
+}
