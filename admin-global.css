@@ -390,3 +390,90 @@ body.wp-admin input[type="date"] {
 .media-menu a:hover {
 	color: var( --wpdp-text );
 }
+
+/* Menus page (nav-menus.php) */
+
+body.wp-admin.nav-menus-php #post-body {
+	background: var( --wpdp-bg ) !important;
+	border-top-color: var( --wpdp-border );
+	border-bottom-color: var( --wpdp-border );
+}
+
+body.wp-admin.nav-menus-php #nav-menu-header,
+body.wp-admin.nav-menus-php #nav-menu-footer {
+	background: var( --wpdp-surface ) !important;
+	border-color: var( --wpdp-border );
+}
+
+body.wp-admin.nav-menus-php .manage-menus {
+	background: var( --wpdp-surface ) !important;
+}
+
+body.wp-admin.nav-menus-php .menu-item-bar .menu-item-handle {
+	background: var( --wpdp-surface );
+	border-color: var( --wpdp-border );
+}
+
+body.wp-admin.nav-menus-php .menu-item-bar .menu-item-handle:hover {
+	border-color: var( --wpdp-text-muted );
+}
+
+body.wp-admin.nav-menus-php #menu-to-edit .menu-item-invalid .menu-item-handle {
+	background: rgba( 214, 54, 56, 0.15 );
+	border-color: #d63638;
+}
+
+body.wp-admin.nav-menus-php .menu-item-settings {
+	background: var( --wpdp-surface-2 );
+	border-color: var( --wpdp-border );
+	box-shadow: none;
+}
+
+body.wp-admin.nav-menus-php .bulk-select-button {
+	background: var( --wpdp-surface-2 );
+	border-color: var( --wpdp-border );
+	color: var( --wpdp-text );
+}
+
+body.wp-admin.nav-menus-php label.bulk-select-button:hover,
+body.wp-admin.nav-menus-php label.bulk-select-button:active,
+body.wp-admin.nav-menus-php label.bulk-select-button:focus-within {
+	background: var( --wpdp-border );
+	border-color: var( --wpdp-accent );
+	color: var( --wpdp-text-strong );
+}
+
+body.wp-admin.nav-menus-php .bulk-actions input.menu-items-delete {
+	color: #ffabaf;
+}
+
+body.wp-admin.nav-menus-php .is-submenu {
+	color: var( --wpdp-text-muted );
+}
+
+body.wp-admin.nav-menus-php .accordion-section {
+	border-bottom-color: var( --wpdp-border );
+}
+
+body.wp-admin.nav-menus-php .accordion-section-title {
+	border-left-color: var( --wpdp-border );
+	border-right-color: var( --wpdp-border );
+}
+
+body.wp-admin.nav-menus-php .accordion-section-title button.accordion-trigger {
+	color: var( --wpdp-text );
+}
+
+body.wp-admin.nav-menus-php .accordion-section-title:hover span.dashicons-arrow-down {
+	color: var( --wpdp-text-strong );
+}
+
+body.wp-admin.nav-menus-php .accordion-section-content {
+	background: var( --wpdp-surface );
+}
+
+body.wp-admin.nav-menus-php #side-sortables .category-tabs .tabs a,
+body.wp-admin.nav-menus-php #side-sortables .add-menu-item-tabs .tabs a,
+body.wp-admin.nav-menus-php .wp-tab-bar .wp-tab-active a {
+	color: var( --wpdp-text-strong );
+}
