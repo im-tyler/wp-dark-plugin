@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Dark Plugin
  * Description: Always-dark post editor. Darkens the admin chrome and the writing canvas when editing blog posts (block editor only). Colours configurable under Settings.
- * Version: 1.4.8
+ * Version: 1.4.9
  * Requires at least: 6.3
  * Author: Tyler
  * License: MIT

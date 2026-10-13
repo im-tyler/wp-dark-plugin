@@ -413,3 +413,14 @@ body.wp-admin .attachment-preview {
 	color: var( --wpdp-text );
 	border-color: var( --wpdp-border );
 }
+
+/* Block editor sidebar panel titles (post settings + block inspector) */
+
+body.wp-admin .components-panel__body-toggle.components-button,
+body.wp-admin .components-panel__body-toggle.components-button .components-panel__arrow {
+	color: var( --wpdp-text-strong ) !important;
+}
+
+body.wp-admin .components-panel__body > .components-panel__body-title:hover {
+	background: var( --wpdp-surface-2 );
+}
