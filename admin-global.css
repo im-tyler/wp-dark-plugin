@@ -455,7 +455,13 @@ body.wp-admin.nav-menus-php .accordion-section {
 	border-bottom-color: var( --wpdp-border );
 }
 
+body.wp-admin.nav-menus-php #menu-settings-column .accordion-container {
+	border-color: var( --wpdp-border );
+	box-shadow: none;
+}
+
 body.wp-admin.nav-menus-php .accordion-section-title {
+	background: var( --wpdp-surface-2 );
 	border-left-color: var( --wpdp-border );
 	border-right-color: var( --wpdp-border );
 }
@@ -470,6 +476,15 @@ body.wp-admin.nav-menus-php .accordion-section-title:hover span.dashicons-arrow-
 
 body.wp-admin.nav-menus-php .accordion-section-content {
 	background: var( --wpdp-surface );
+}
+
+body.wp-admin.nav-menus-php .wp-tab-panel,
+body.wp-admin.nav-menus-php .categorydiv div.tabs-panel,
+body.wp-admin.nav-menus-php .customlinkdiv div.tabs-panel,
+body.wp-admin.nav-menus-php .posttypediv div.tabs-panel,
+body.wp-admin.nav-menus-php .taxonomydiv div.tabs-panel {
+	background-color: var( --wpdp-input );
+	border-color: var( --wpdp-border );
 }
 
 body.wp-admin.nav-menus-php #side-sortables .category-tabs .tabs a,
